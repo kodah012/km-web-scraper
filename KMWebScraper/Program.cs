@@ -1,12 +1,15 @@
 ﻿using System;
+using System.Threading.Tasks;
+using KMWebScraper.Navigation;
 
 namespace KMWebScraper
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Browser browser = new Browser();
+            browser.Navigate(new Uri("https://old.reddit.com/"), "r/all/").GetAwaiter().GetResult();
         }
     }
 }
